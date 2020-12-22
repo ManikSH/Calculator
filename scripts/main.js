@@ -67,11 +67,11 @@ evalBtns.forEach((evalBtn) => {
 
     switch (evalBtn.classList.value) {
       case "btn pi eval":
-        calci.updateIncrement(Math.PI.toFixed(5));
+        calci.updateIncrement(Math.PI);
         break;
 
       case "btn reciprocal eval":
-        calci.update((1 / result.innerText).toFixed(5));
+        calci.update((1 / result.innerText));
         break;
 
       case "btn square eval":
@@ -83,19 +83,19 @@ evalBtns.forEach((evalBtn) => {
         break;
 
       case "btn log eval":
-        calci.update(Math.log10(result.innerText).toFixed(5));
+        calci.update(Math.log10(result.innerText));
         break;
 
       case "btn sqRoot eval":
-        calci.update(Math.sqrt(result.innerText).toFixed(5));
+        calci.update(Math.sqrt(result.innerText));
         break;
 
       case "btn cbRoot eval":
-        calci.update(Math.cbrt(result.innerText).toFixed(5));
+        calci.update(Math.cbrt(result.innerText));
         break;
 
       case "btn powerOf10 eval":
-        calci.update(Math.pow(10, result.innerText).toFixed(5));
+        calci.update(Math.pow(10, result.innerText));
         break;
 
       case "btn sin eval":
