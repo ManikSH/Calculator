@@ -1,0 +1,2 @@
+There is a code in script.js which is giving an error.
+Error code is commented out.

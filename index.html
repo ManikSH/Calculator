@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <header>Calculator</header>
+
+    <section class="mainSection">
+      <div class="mainSectionContainer">
+        <div class="result"></div>
+        <div class="keys">
+          <div class="row1">
+              <div class="btn checkbox radian input">
+              <input type="radio" checked name="angle" class="rad" />
+              <div class="checkboxName">Rad</div>
+            </div>
+            <div class="btn checkbox radian input">
+              <input type="radio" name="angle" class="deg" />
+              <div class="checkboxName">Deg</div>
+            </div>
+            <div class="btn output">+</div>
+            <!-- <div class="btn output">(</div> -->
+            <!-- <div class="btn output">)</div> -->
+            <div class="btn bs input">&larr;</div>
+            <div class="btn clear input">C</div>
+            <div class="btn output operator">+</div>
+          </div>
+          <div class="row2">
+              <div class="btn output">-</div>
+            <div class="btn sin input">sin</div>
+            <div class="btn cos input">cos</div>
+            <div class="btn tan input">tan</div>
+            <div class="btn output">7</div>
+            <div class="btn output">8</div>
+            <div class="btn output">9</div>
+            <div class="btn output operator">-</div>
+          </div>
+          <div class="row3">
+            <!-- &frasl; &sup2; &xscr; &Xscr; -->
+            <div class="btn output">x</div>
+            <div class="btn sqRoot input">&radic;&xscr;</div>
+            <div class="btn cbRoot input">&#8731;&xscr;</div>
+            <div class="btn powerOf10 input">10<sup><sup>&xscr;</sup></sup></div>
+            <div class="btn output">4</div>
+            <div class="btn output">5</div>
+            <div class="btn output">6</div>
+            <div class="btn output operator">x</div>
+          </div>
+          <div class="row4">
+              <div class="btn output">/</div>
+            <div class="btn pi input">&pi;</div>
+            <div class="btn square input">&xscr;<sup>2</sup></div>
+            <div class="btn cube input">&xscr;<sup>3</sup></div>
+            <div class="btn output">1</div>
+            <div class="btn output">2</div>
+            <div class="btn output">3</div>
+            <div class="btn output operator">/</div>
+          </div>
+          <div class="row5">
+              <div class="btn input">=</div>
+            <div class="btn reciprocal input">1 &frasl;&xscr;</div>
+            <div class="btn mod output">mod</div>
+            <div class="btn log input">log</div>
+            <div class="btn output">.</div>
+            <div class="btn output">0</div>
+            <div class="btn equal input">=</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>
