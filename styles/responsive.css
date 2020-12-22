@@ -1,22 +1,19 @@
-
-
 @media (max-width: 600px) {
-.keys {
-       flex-direction: column-reverse;
-   }
+  .keys {
+    flex-direction: column-reverse;
+  }
 
-   .part1 {
-       border-right: none;
+  .part1 {
+    border-right: none;
     padding-right: 0.2rem;
+  }
 
-}
+  .part2 {
+    border-bottom: 0.1rem solid white;
+    padding-left: 0.2rem;
+  }
 
-.part2 {
-  border-bottom: 0.1rem solid white;
-  padding-left: 0.2rem;
-}
-
-html {
+  html {
     font-size: 90%;
-}
+  }
 }

@@ -26,7 +26,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: 1rem; */
 }
 
 .mainSectionContainer {
@@ -35,13 +34,12 @@ body {
 }
 
 .keys {
-    display: flex;
+  display: flex;
 }
 
 .part1 {
   border-right: 0.1rem solid white;
-    padding-right: 0.2rem;
-
+  padding-right: 0.2rem;
 }
 
 .part2 {
@@ -56,6 +54,7 @@ body {
   padding: 1rem;
   align-items: center;
   border-bottom: 0.1rem solid white;
+  overflow: hidden;
 }
 
 .row1,
@@ -83,7 +82,7 @@ body {
 }
 
 .checkbox {
-    width: 7.6rem;
+  width: 7.6rem;
 }
 .btn:hover {
   background-color: rgb(255, 255, 255);
@@ -95,21 +94,16 @@ body {
 }
 
 .clear {
-    background-color: rgb(187, 187, 0);
+  background-color: rgb(187, 187, 0);
 }
 
-
-
-
 .checkbox div {
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .checkbox input {
-    cursor: pointer;
+  cursor: pointer;
 }
-
-
 
 header {
   font-weight: 600;
