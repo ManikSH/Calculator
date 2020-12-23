@@ -43,8 +43,11 @@ body {
 }
 
 .part1 {
-  border-right: 0.1rem solid white;
-  padding: 0.3rem;
+  display: grid;
+  /* grid-template-rows: 3fr 3fr 3fr; */
+  grid-template-columns: repeat(5, 4rem);
+  /* border-right: 0.1rem solid white;
+  padding: 0.3rem; */
 }
 
 .part2 {
