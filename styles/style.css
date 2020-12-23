@@ -10,12 +10,17 @@
   display: none;
 }
 
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/poppins/Poppins-Regular.ttf);
+}
+
 /* ------------------------------ MAIN CONTAINER------------------------------------ */
 
 body {
   background: linear-gradient(90.42deg, #05ff00 0.35%, #faff00 99.63%);
   color: white;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 1.3rem;
   height: 100vh;
 }
@@ -30,7 +35,7 @@ body {
 
 .mainSectionContainer {
   background-color: rgb(0, 0, 0);
-  border: 0.5rem solid rgb(32, 32, 32);
+  border: 0.5rem solid rgb(46, 46, 46);
 }
 
 .keys {
@@ -39,30 +44,24 @@ body {
 
 .part1 {
   border-right: 0.1rem solid white;
-  /* padding: 0.5rem 0.2rem 0rem 0.2rem;
-  padding-right: 0.2rem;
-  padding-left: 0.2rem;
-  padding-top: 0.5rem; */
   padding: 0.3rem;
 }
 
 .part2 {
-  /* padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  padding-top: 0.5rem; */
   padding: 0.3rem;
 
 }
 
 .result {
+  background-color:rgb(254, 255, 198);
+  color: rgb(22, 22, 22);
+  font-weight: bolder;
   height: 4rem;
   font-size: 2rem;
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem;
-  align-items: center;
+    padding: 1rem;
+  min-width: 100%;
+  text-align: right;
   border-bottom: 0.1rem solid white;
-  overflow: hidden;
 }
 
 .row1,
@@ -78,23 +77,29 @@ body {
   background-color: rgb(29, 29, 29);
   align-items: center;
   justify-content: center;
-  min-height: 3.4rem;
-  min-width: 3.4rem;
-  margin: 0.3rem;
+  min-height: 4rem;
+  min-width: 4rem;
+  margin: 0.1rem;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(66, 66, 66);
+}
+
+
+.btn:active {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .equal {
   background-color: green;
-  width: 7.4rem;
+  width: 8.2rem;
 }
 
 .checkbox {
-  width: 7.4rem;
-}
-.btn:hover {
-  background-color: rgb(255, 255, 255);
-  color: black;
+  width: 8.2rem;
 }
 
 .operator {

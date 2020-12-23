@@ -5,60 +5,71 @@ let staticBtns = document.querySelectorAll(".static");
 let radCheckbox = document.querySelector(".rad");
 let degCheckbox = document.querySelector(".deg");
 
+
+// Default value
+result.value = "0";
+
 let calci = {
   staticBtns(btn) {
-    if (result.innerHTML == "0" || result.innerHTML == "0.00000") {
-      return (result.innerHTML = btn.innerText);
+    if (result.value == "0") {
+      return (result.value = btn.innerText);
     } else {
-      return (result.innerHTML += btn.innerText);
+      return (result.value += btn.innerText);
     }
   },
   replace(btn) {
     if (btn.innerText == "x") {
-      return (result.innerHTML += "*");
+      return (result.value += "*");
     } else {
-      return (result.innerHTML += "%");
+      return (result.value += "%");
     }
   },
   update(data) {
-    return (result.innerHTML = data);
+    return (result.value = data);
   },
   updateIncrement(data) {
-    return (result.innerHTML += data);
+    return (result.value += data);
   },
   toRadian(degrees) {
     return degrees * (Math.PI / 180);
   },
-  backSpace() {
-    let resultArry = result.innerText.split("");
-    resultArry.pop();
-    let resultString = resultArry.toString();
-    resultString = resultString.replace(/\,/g, "");
-    result.innerHTML = resultString;
+  del() {
+    if (result.value == "" || result.value == "0") {
+      result.value = "0";
+    } else {
+      result.value = result.innerText.slice(0, -1);
+    }
   },
 };
 
+// Static Buttons function
 staticBtns.forEach((staticBtn) => {
   staticBtn.addEventListener("click", () => {
     calci.staticBtns(staticBtn);
   });
 });
 
+// Replace Buttons function
 replaceBtns.forEach((replaceBtns) => {
   replaceBtns.addEventListener("click", () => {
     calci.replace(replaceBtns);
   });
 });
 
+// Evaluation Buttons functions
 evalBtns.forEach((evalBtn) => {
   evalBtn.addEventListener("click", () => {
     switch (evalBtn.innerText) {
       case "=":
-        calci.update(eval(result.innerHTML).toFixed(5));
+        calci.update(eval(result.value));
         break;
 
-      case "C":
+      case "AC":
         calci.update("0");
+        break;
+
+      case "DEL":
+        calci.del();
         break;
 
       default:
@@ -71,7 +82,7 @@ evalBtns.forEach((evalBtn) => {
         break;
 
       case "btn reciprocal eval":
-        calci.update((1 / result.innerText));
+        calci.update(1 / result.innerText);
         break;
 
       case "btn square eval":
@@ -100,30 +111,26 @@ evalBtns.forEach((evalBtn) => {
 
       case "btn sin eval":
         if (radCheckbox.checked) {
-          calci.update(Math.sin(result.innerText).toFixed(5));
+          calci.update(Math.sin(result.innerText));
         } else {
-          calci.update(Math.sin(calci.toRadian(result.innerText)).toFixed(5));
+          calci.update(Math.sin(calci.toRadian(result.innerText)));
         }
         break;
 
       case "btn cos eval":
         if (radCheckbox.checked) {
-          calci.update(Math.cos(result.innerText).toFixed(5));
+          calci.update(Math.cos(result.innerText));
         } else {
-          calci.update(Math.cos(calci.toRadian(result.innerText)).toFixed(5));
+          calci.update(Math.cos(calci.toRadian(result.innerText)));
         }
         break;
 
       case "btn tan eval":
         if (radCheckbox.checked) {
-          calci.update(Math.tan(result.innerText).toFixed(5));
+          calci.update(Math.tan(result.innerText));
         } else {
-          calci.update(Math.tan(calci.toRadian(result.innerText)).toFixed(5));
+          calci.update(Math.tan(calci.toRadian(result.innerText)));
         }
-        break;
-
-      case "btn bs eval":
-        calci.backSpace();
         break;
 
       default:
@@ -134,6 +141,6 @@ evalBtns.forEach((evalBtn) => {
 
 // // for (var a = 0; a < 20; a++) {
 // //     buttons[a].addEventListener('click', () => {
-// //         result.innerHTML = buttons[a].innerText;
+// //         result.value = buttons[a].innerText;
 // //     });
 // // }

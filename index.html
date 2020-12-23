@@ -6,18 +6,13 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <header>Calculator</header>
 
     <section class="mainSection">
       <div class="mainSectionContainer">
-        <div class="result">0</div>
+        <input class="result" disabled>
         <div class="keys">
           <div class="part1">
             <div class="row1">
@@ -66,8 +61,8 @@
               <div class="btn static"></div>
               <!-- <div class="btn static">(</div> -->
               <!-- <div class="btn static">)</div> -->
-              <div class="btn bs eval">&larr;</div>
-              <div class="btn clear eval">C</div>
+              <div class="btn bs eval">DEL</div>
+              <div class="btn clear eval">AC</div>
               <div class="btn static operator">+</div>
             </div>
 
