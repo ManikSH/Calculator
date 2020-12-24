@@ -5,37 +5,33 @@
 
   .part1 {
     border-right: none;
+    border-top: 0.2rem solid white;
+  }
+  .part1 {
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: repeat(5, 5rem);
   }
 
   .part2 {
-    border-bottom: 0.1rem solid white;
-  }
-
-  .btn {
-    font-size: 1.5rem;
-    min-height: 4.5rem;
-    min-width: 4.5rem;
-    margin: 0.3rem;
-  }
-
-  .equal {
-    background-color: green;
-    width: 9.6rem;
-  }
-
-  .checkbox {
-    width: 9.6rem;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: repeat(5, 5rem);
   }
 }
 
 @media (max-width: 400px) {
-  html {
-    font-size: 85%;
+  .part1 {
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: repeat(5, 4rem);
+  }
+
+  .part2 {
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: repeat(5, 4rem);
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 300px) {
   html {
-    font-size: 70%;
+    font-size: 80%;
   }
 }

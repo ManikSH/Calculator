@@ -5,39 +5,40 @@ let staticBtns = document.querySelectorAll(".static");
 let radCheckbox = document.querySelector(".rad");
 let degCheckbox = document.querySelector(".deg");
 
-
-// Default value
-result.value = "0";
+// Default innerText
+result.innerText = "0";
 
 let calci = {
   staticBtns(btn) {
-    if (result.value == "0") {
-      return (result.value = btn.innerText);
+    if (result.innerText == "0") {
+      return (result.innerText = btn.innerText);
     } else {
-      return (result.value += btn.innerText);
+      return (result.innerText += btn.innerText);
     }
   },
   replace(btn) {
     if (btn.innerText == "x") {
-      return (result.value += "*");
+      return (result.innerText += "*");
+    } else if (btn.classList.value == "btn userdefinedPower replace") {
+      return (result.innerText += "**");
     } else {
-      return (result.value += "%");
+      return (result.innerText += "%");
     }
   },
   update(data) {
-    return (result.value = data);
+    return (result.innerText = data);
   },
   updateIncrement(data) {
-    return (result.value += data);
+    return (result.innerText += data);
   },
   toRadian(degrees) {
     return degrees * (Math.PI / 180);
   },
   del() {
-    if (result.value == "" || result.value == "0") {
-      result.value = "0";
+    if (result.innerText == "" || result.innerText == "0") {
+      result.innerText = "0";
     } else {
-      result.value = result.innerText.slice(0, -1);
+      result.innerText = result.innerText.slice(0, -1);
     }
   },
 };
@@ -61,7 +62,7 @@ evalBtns.forEach((evalBtn) => {
   evalBtn.addEventListener("click", () => {
     switch (evalBtn.innerText) {
       case "=":
-        calci.update(eval(result.value));
+        calci.update(eval(result.innerText));
         break;
 
       case "AC":
@@ -95,6 +96,10 @@ evalBtns.forEach((evalBtn) => {
 
       case "btn log eval":
         calci.update(Math.log10(result.innerText));
+        break;
+
+      case "btn pow4 eval":
+        calci.update(result.innerText ** 4);
         break;
 
       case "btn sqRoot eval":
@@ -133,14 +138,100 @@ evalBtns.forEach((evalBtn) => {
         }
         break;
 
+      case "btn forthRoot eval":
+        calci.update(Math.pow(result.innerText, 1 / 4));
+        break;
+
       default:
         break;
     }
   });
 });
 
+document.onkeydown = function (e) {
+  switch (e.key) {
+    case "1":
+      staticBtns[12].click();
+      break;
+
+    case "2":
+      staticBtns[13].click();
+      break;
+
+    case "3":
+      staticBtns[14].click();
+      break;
+
+    case "4":
+      staticBtns[9].click();
+      break;
+
+    case "5":
+      staticBtns[10].click();
+      break;
+
+    case "6":
+      staticBtns[11].click();
+      break;
+
+    case "7":
+      staticBtns[5].click();
+      break;
+
+    case "8":
+      staticBtns[6].click();
+      break;
+
+    case "9":
+      staticBtns[7].click();
+      break;
+
+    case "0":
+      staticBtns[17].click();
+      break;
+
+    case "+":
+      staticBtns[4].click();
+      break;
+
+    case "-":
+      staticBtns[8].click();
+      break;
+
+    case "/":
+      staticBtns[15].click();
+      break;
+
+    case ".":
+      staticBtns[16].click();
+      break;
+
+    case "*":
+      replaceBtns[1].click();
+      break;
+
+    case "Enter":
+      evalBtns[16].click();
+      break;
+
+    case "Backspace":
+      evalBtns[14].click();
+      break;
+
+    case "Delete":
+      evalBtns[14].click();
+      break;
+
+    case "c":
+      evalBtns[15].click();
+
+    default:
+      break;
+  }
+};
+
 // // for (var a = 0; a < 20; a++) {
 // //     buttons[a].addEventListener('click', () => {
-// //         result.value = buttons[a].innerText;
+// //         result.innerText = buttons[a].innerText;
 // //     });
 // // }

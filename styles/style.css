@@ -34,62 +34,79 @@ body {
 }
 
 .mainSectionContainer {
-  background-color: rgb(0, 0, 0);
-  border: 0.5rem solid rgb(46, 46, 46);
+  /* here border is not working properly so use outline */
+  outline: 0.5rem solid rgb(0, 0, 0);
 }
 
 .keys {
   display: flex;
 }
 
+.checkboxName {
+  padding: 0.5rem;
+}
+
 .part1 {
   display: grid;
-  /* grid-template-rows: 3fr 3fr 3fr; */
-  grid-template-columns: repeat(5, 4rem);
-  /* border-right: 0.1rem solid white;
-  padding: 0.3rem; */
+  grid-template-columns: repeat(4, 4rem);
+  grid-template-rows: repeat(5, 4rem);
+  border-right: 0.2rem solid white;
 }
 
 .part2 {
-  padding: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 4rem);
+  grid-template-rows: repeat(5, 4rem);
+}
 
+.equal {
+  grid-column: -3 / -1;
+}
+
+.radian {
+  grid-column: 1 / 3;
+}
+
+.deg {
+  grid-column: 3 / 5;
 }
 
 .result {
-  background-color:rgb(254, 255, 198);
+  background-color: rgb(254, 255, 198);
   color: rgb(22, 22, 22);
   font-weight: bolder;
   height: 4rem;
-  font-size: 2rem;
-    padding: 1rem;
-  min-width: 100%;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 1rem;
   text-align: right;
-  border-bottom: 0.1rem solid white;
+  border: none;
+  outline: none;
 }
 
-.row1,
-.row2,
-.row3,
-.row4,
-.row5 {
-  display: flex;
-}
-
-.btn {
+/* .part1 *, .part2 * {
+  border: 0.05rem solid rgb(0, 0, 0);
   display: flex;
   background-color: rgb(29, 29, 29);
   align-items: center;
   justify-content: center;
-  min-height: 4rem;
-  min-width: 4rem;
-  margin: 0.1rem;
+  cursor: pointer;
+} */
+
+.btn {
+  border: 0.05rem solid rgb(0, 0, 0);
+  display: flex;
+  background-color: rgb(29, 29, 29);
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: rgb(66, 66, 66);
+@media (hover: hover) {
+  .btn:hover {
+    background-color: rgb(49, 49, 49);
+  }
 }
-
 
 .btn:active {
   background-color: rgb(255, 255, 255);
@@ -98,11 +115,6 @@ body {
 
 .equal {
   background-color: green;
-  width: 8.2rem;
-}
-
-.checkbox {
-  width: 8.2rem;
 }
 
 .operator {
@@ -111,10 +123,6 @@ body {
 
 .clear {
   background-color: rgb(187, 187, 0);
-}
-
-.checkbox div {
-  padding: 0.5rem;
 }
 
 .checkbox input {
